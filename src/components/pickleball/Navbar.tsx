@@ -9,7 +9,7 @@ export const Navbar = () => {
         <Link to="/" className="hover:opacity-90 transition-opacity">
           <img src={eyelevelLogo} alt="EyeLevel Studio" className="h-20 md:h-38 w-auto" />
         </Link>
-        <div className="hidden max-w-7xl md:flex items-center gap-1 bg-foreground/5 backdrop-blur-md border border-foreground/10 rounded-full px-2 py-1.5">
+        <div className="hidden max-w-8xl md:flex items-center gap-1 bg-foreground/5 backdrop-blur-md border border-foreground/10 rounded-full px-2 py-1.5">
           {[
             { label: "Services", id: "services" },
             { label: "Events", id: "case-studies" },
