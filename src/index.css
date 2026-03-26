@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 153 37% 16%;
+    --foreground: 0 0% 100%;
+
+    --card: 153 37% 16%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 153 37% 16%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 72 68% 67%;
+    --primary-foreground: 153 37% 16%;
+
+    --secondary: 153 25% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 153 25% 20%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 153 25% 20%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 153 20% 25%;
+    --input: 153 20% 25%;
+    --ring: 72 68% 67%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 153 37% 12%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 72 68% 67%;
+    --sidebar-primary-foreground: 153 37% 16%;
+    --sidebar-accent: 153 25% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 153 20% 25%;
+    --sidebar-ring: 72 68% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
