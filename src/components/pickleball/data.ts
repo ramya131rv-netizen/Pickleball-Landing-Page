@@ -3,6 +3,14 @@ import {
   Layers, Target, Video, Users, Trophy, Zap, Star, CheckCircle2
 } from "lucide-react";
 
+import Wppl from "@/assets/Wppl.png";
+import bj from "@/assets/BJ.png";
+import csc from "@/assets/Csc.jpg";
+import TNPA from "../../assets/tnpa.jpg";
+import professional from "../../assets/professional.png";
+import association from "../../assets/association.png";
+
+
 export const trustedBy = [
   { tag: "TNPA", name: "Tamil Nadu Pickleball Association" },
   { tag: "WPPL", name: "Women's Premier Pickleball League" },
@@ -107,6 +115,7 @@ export const fullChecklist = [
 
 export const caseStudies = [
   {
+    img: Wppl,
     tag: "WPPL",
     badge: "India First · Flagship Project",
     location: "VGP Heritage, ECR, Chennai",
@@ -123,6 +132,7 @@ export const caseStudies = [
     featured: true,
   },
   {
+    img: csc,
     tag: "WPL",
     location: "Chennai",
     title: "Chennai Super Champs Pickleball Open",
@@ -130,6 +140,7 @@ export const caseStudies = [
     desc: "End-to-end event management, court branding, production, photography & social media — WPL franchise standards.",
   },
   {
+    img: bj,
     tag: "WPL",
     location: "Bangalore",
     title: "Bangalore Jawans Bangalore Open",
@@ -137,6 +148,7 @@ export const caseStudies = [
     desc: "End-to-end event management, branding, production, and team merchandising — EyeLevel's first cross-city delivery.",
   },
   {
+    img: TNPA,
     tag: "TNPA",
     location: "Chennai",
     title: "TNPA Women's Day Pickleball Event",
@@ -146,10 +158,10 @@ export const caseStudies = [
 ];
 
 export const eventFormats = [
-  { icon: Trophy, title: "Professional Leagues", desc: "Multi-day · Multi-team · Full production" },
-  { icon: Zap, title: "WPL Franchise Events", desc: "World Pickleball League standard" },
-  { icon: Users, title: "Association Events", desc: "Official TNPA activations" },
-  { icon: Target, title: "Open Tournaments", desc: "End-to-end tournament management" },
+  { img: professional, icon: Trophy, title: "Professional Leagues", desc: "Multi-day · Multi-team · Full production" },
+  { img: association, icon: Zap, title: "WPL Franchise Events", desc: "World Pickleball League standard" },
+  { img: Wppl, icon: Users, title: "Association Events", desc: "Official TNPA activations" },
+  { img: Wppl, icon: Target, title: "Open Tournaments", desc: "End-to-end tournament management" },
 ];
 
 export const ecosystemItems = [
@@ -297,7 +309,7 @@ export const faqs = [
 
 export const footerStats = [
   { label: "Response time", value: "< 24 hours" },
-  { label: "Events delivered", value: "4 & counting" },  { label: "Cities covered", value: "Chennai, Bangalore +" },
+  { label: "Events delivered", value: "4 & counting" }, { label: "Cities covered", value: "Chennai, Bangalore +" },
   { label: "Sport specialisation", value: "Pickleball only" },
 ];
 

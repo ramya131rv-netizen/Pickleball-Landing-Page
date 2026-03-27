@@ -5,12 +5,6 @@ import pickleballEventBg from "@/assets/pickleball-event-bg.jpg";
 import pickleballHeroBg from "@/assets/pickleball-hero-bg.jpg";
 import { fadeUp, stagger, caseStudies, eventFormats } from "./data";
 
-const unsplashImages = [
-  "https://images.unsplash.com/photo-1622279457486-640c43431653?q=80&w=2000&auto=format&fit=crop", // Tennis stadium vibe
-  "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=1000&auto=format&fit=crop", // Action shot
-  "https://images.unsplash.com/photo-1554068865-c72eb88d3e87?q=80&w=1000&auto=format&fit=crop", // Stadium lights night
-  "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=1000&auto=format&fit=crop"  // Professional sports
-];
 
 export const CaseStudiesSection = () => {
   const [activeTab, setActiveTab] = useState("All");
@@ -20,6 +14,7 @@ export const CaseStudiesSection = () => {
 
   const featuredStudy = caseStudies[0];
   const gridStudies = caseStudies.slice(1);
+
 
   return (
     <section id="case-studies" className="bg-[#102319] text-white py-24 px-4 font-sans border-t border-[#1a3a2d]">
@@ -52,8 +47,8 @@ export const CaseStudiesSection = () => {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`shrink-0 px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider transition-colors ${activeTab === tab
-                    ? "bg-[#d0e999] text-[#102319]"
-                    : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
+                  ? "bg-[#d0e999] text-[#102319]"
+                  : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
                   }`}
               >
                 {tab}
@@ -75,7 +70,7 @@ export const CaseStudiesSection = () => {
               </span>
             </div>
             <img
-              src={pickleballEventBg}
+              src={featuredStudy.img}
               alt={featuredStudy.title}
               className="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
             />
@@ -149,7 +144,7 @@ export const CaseStudiesSection = () => {
               >
                 <div className="w-full aspect-[16/9] overflow-hidden">
                   <img
-                    src={unsplashImages[i + 1]}
+                    src={cs.img}
                     alt={cs.title}
                     className="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
                   />
@@ -199,7 +194,7 @@ export const CaseStudiesSection = () => {
                 className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-black cursor-pointer border border-white/5"
               >
                 <img
-                  src={unsplashImages[i]}
+                  src={format.img}
                   alt={format.title}
                   className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-110 transition-all duration-700"
                 />
