@@ -187,10 +187,33 @@ export const caseStudies = [
 ];
 
 export const eventFormats = [
-  { icon: Trophy, title: "Professional Leagues", desc: "Multi-day · Multi-team · Full production" },
-  { icon: Zap, title: "WPL Franchise Events", desc: "World Pickleball League standard" },
-  { icon: Users, title: "Association Events", desc: "Official TNPA activations" },
-  { icon: Target, title: "Open Tournaments", desc: "End-to-end tournament management" },
+<<<<<<<<< Temporary merge branch 1
+  { img: professional, icon: Trophy, title: "Professional Leagues", desc: "Multi-day · Multi-team · Full production" },
+  { img: association, icon: Zap, title: "WPL Franchise Events", desc: "World Pickleball League standard" },
+  { img: Wppl, icon: Users, title: "Association Events", desc: "Official TNPA activations" },
+  { img: Wppl, icon: Target, title: "Open Tournaments", desc: "End-to-end tournament management" },
+=========
+  {
+    icon: Trophy,
+    title: "Professional Leagues",
+    desc: "Multi-day · Multi-team · Full production",
+  },
+  {
+    icon: Zap,
+    title: "WPL Franchise Events",
+    desc: "World Pickleball League standard",
+  },
+  {
+    icon: Users,
+    title: "Association Events",
+    desc: "Official TNPA activations",
+  },
+  {
+    icon: Target,
+    title: "Open Tournaments",
+    desc: "End-to-end tournament management",
+  },
+>>>>>>>>> Temporary merge branch 2
 ];
 
 export const ecosystemItems = [
@@ -404,7 +427,12 @@ export const faqs = [
 
 export const footerStats = [
   { label: "Response time", value: "< 24 hours" },
-  { label: "Events delivered", value: "4 & counting" },  { label: "Cities covered", value: "Chennai, Bangalore +" },
+<<<<<<<<< Temporary merge branch 1
+  { label: "Events delivered", value: "4 & counting" }, { label: "Cities covered", value: "Chennai, Bangalore +" },
+=========
+  { label: "Events delivered", value: "4 & counting" },
+  { label: "Cities covered", value: "Chennai, Bangalore +" },
+>>>>>>>>> Temporary merge branch 2
   { label: "Sport specialisation", value: "Pickleball only" },
 ];
 

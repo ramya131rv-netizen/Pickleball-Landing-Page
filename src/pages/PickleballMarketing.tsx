@@ -12,6 +12,8 @@ import { FAQSection } from "@/components/pickleball/FAQSection";
 import { FinalCTASection } from "@/components/pickleball/FinalCTASection";
 import { MobileFixedCTA } from "@/components/pickleball/MobileFixedCTA";
 import { Footer } from "@/components/pickleball/Footer";
+import TrustedBy from "@/components/pickleball/TrustedBy";
+import OurPartners from "@/components/pickleball/OurPartners";
 
 const PickleballMarketing = () => {
   return (
