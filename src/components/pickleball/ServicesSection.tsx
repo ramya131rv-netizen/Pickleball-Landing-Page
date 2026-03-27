@@ -1,46 +1,52 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
-import { fadeUp, stagger, services } from "./data";
+
+import { fadeUp, services, stagger } from "./data";
+import { sectionBody, sectionEyebrow, sectionSpacing, sectionSubtitle, sectionTitle } from "./sectionStyles";
 
 export const ServicesSection = () => {
   return (
-    <section id="services" className="py-12 md:py-16 px-4 relative overflow-hidden" style={{ backgroundColor: '#253e35' }}>
-      <div className="max-w-6xl mx-auto relative z-10">
-        <motion.div {...fadeUp} className="text-center mb-3">
-          <span className="text-xs uppercase tracking-widest text-foreground/40 font-semibold">Full-Stack Pickleball Services</span>
+    <section id="services" className={`relative overflow-hidden ${sectionSpacing}`} style={{ backgroundColor: "#253e35" }}>
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <motion.div {...fadeUp} className="mb-3 text-center">
+          <span className={`${sectionEyebrow} text-foreground/40`}>Full-Stack Pickleball Services</span>
         </motion.div>
-        <motion.h2 {...fadeUp} className="font-dela text-3xl sm:text-4xl md:text-5xl text-foreground text-center mb-2">
+        <motion.h2 {...fadeUp} className={`${sectionTitle} mb-2 text-center text-foreground`}>
           Everything You Need To Run
           <br className="hidden sm:block" />
           A Successful Pickleball Event
         </motion.h2>
-        <motion.h3 {...fadeUp} className="font-dela text-xl sm:text-2xl text-primary text-center mb-3">
+        <motion.h3 {...fadeUp} className={`${sectionSubtitle} mb-3 text-center text-primary`}>
           All Managed Under One Roof
         </motion.h3>
-        <motion.p {...fadeUp} className="text-center text-foreground/50 max-w-2xl mx-auto mb-12 text-sm sm:text-base">
-          From production and branding to sponsorship and broadcast — we plan, execute and scale your entire tournament.
+        <motion.p {...fadeUp} className={`${sectionBody} mx-auto mb-12 max-w-2xl text-center text-foreground/50`}>
+          From production and branding to sponsorship and broadcast â€” we plan, execute and scale your entire tournament.
         </motion.p>
 
-        {/* 3x2 Service Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+        <div className="mb-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <motion.div
               key={i}
               {...stagger(i)}
-              className="rounded-2xl p-6 border border-foreground/[0.08] flex flex-col"
-              style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}
+              className="flex flex-col rounded-2xl border border-foreground/[0.08] p-6"
+              style={{ backgroundColor: "rgba(255,255,255,0.03)" }}
             >
-              <div className="flex items-start gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <s.icon className="w-5 h-5 text-primary" />
+              <div className="mb-3 flex items-start gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <s.icon className="h-5 w-5 text-primary" />
                 </div>
-                <h4 className="font-dela text-base sm:text-lg text-foreground leading-tight pt-1">{s.title}</h4>
+                <h4 className="pt-1 font-dela text-base leading-tight text-foreground sm:text-lg">{s.title}</h4>
               </div>
-              <p className="text-sm text-foreground/50 leading-relaxed mb-4 flex-1">{s.desc}</p>
+              <p className="mb-4 flex-1 text-sm leading-relaxed text-foreground/50">{s.desc}</p>
               <div className="flex flex-wrap gap-2">
                 {s.tags.map((tag, j) => (
-                  <span key={j} className="text-xs px-3 py-1.5 rounded-full border border-foreground/[0.08] text-foreground/60 font-medium" style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
+                  <span
+                    key={j}
+                    className="rounded-full border border-foreground/[0.08] px-3 py-1.5 text-xs font-medium text-foreground/60"
+                    style={{ backgroundColor: "rgba(255,255,255,0.04)" }}
+                  >
                     {tag}
                   </span>
                 ))}
@@ -49,12 +55,11 @@ export const ServicesSection = () => {
           ))}
         </div>
 
-        {/* Bottom CTA Bar */}
-        <motion.div {...fadeUp} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <motion.div {...fadeUp} className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <div className="space-y-1.5">
             {["End-to-End Tournament Management", "Multi-City League Experience", "Sponsor Delivery & ROI Tracking"].map((item, i) => (
               <div key={i} className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
                 <span className="text-sm text-foreground/60">{item}</span>
               </div>
             ))}

@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 import { Star, ArrowRight } from "lucide-react";
 import { testimonials } from "./data";
 import pickleballEventBg from "@/assets/pickleball-event-bg.jpg";
+import { sectionBody, sectionEyebrow, sectionSpacing, sectionTitle } from "./sectionStyles";
 
 export const TestimonialsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-24 md:py-32 w-full bg-gradient-to-br from-[#163027] to-[#253e35] border-y border-white/5 font-sans overflow-hidden">
+    <section className={`w-full bg-gradient-to-br from-[#163027] to-[#253e35] border-y border-white/5 font-sans overflow-hidden ${sectionSpacing}`}>
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
 
         {/* 1. Main Container */}
@@ -35,7 +36,7 @@ export const TestimonialsSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="text-[#a8c78c] text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold mb-6 block"
+                  className={`${sectionEyebrow} text-[#a8c78c] mb-6 block`}
                 >
                   Client Stories
                 </motion.span>
@@ -44,7 +45,7 @@ export const TestimonialsSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="font-dela text-4xl sm:text-5xl md:text-6xl text-white leading-[1.1]"
+                  className={`${sectionTitle} text-white`}
                 >
                   How Pickleball Teams Describe
                   <br />
@@ -107,7 +108,7 @@ export const TestimonialsSection = () => {
                       </span>
                     </div>
 
-                    <p className={`text-sm md:text-base font-light mb-8 transition-colors duration-300 relative z-10 ${isActive ? "text-white" : "text-white/60"
+                    <p className={`${sectionBody} font-light mb-8 transition-colors duration-300 relative z-10 ${isActive ? "text-white" : "text-white/60"
                       }`}>
                       "{t.quote}"
                     </p>
