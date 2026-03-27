@@ -2,20 +2,21 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { fadeUp, whoWeServe } from "./data";
+import { sectionBody, sectionEyebrow, sectionSpacing, sectionTitle } from "./sectionStyles";
 
 export const WhoWeServeSection = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="who-we-serve" className="py-24 md:py-32 px-4 bg-[#102319] font-sans">
+    <section id="who-we-serve" className={`${sectionSpacing} bg-[#102319] font-sans`}>
       <div className="max-w-[1000px] mx-auto">
         
         {/* Header */}
         <div className="text-center mb-12">
-          <motion.div {...fadeUp} className="text-[#a8c78c] text-[11px] uppercase tracking-[0.2em] font-bold mb-4">
+          <motion.div {...fadeUp} className={`${sectionEyebrow} text-[#a8c78c] mb-4`}>
             Who We Serve
           </motion.div>
-          <motion.h2 {...fadeUp} className="font-dela text-4xl sm:text-5xl md:text-[56px] text-white leading-[1.1]">
+          <motion.h2 {...fadeUp} className={`${sectionTitle} text-white`}>
             Built for Everyone Who
             <br className="hidden sm:block" />
             <span className="text-[#d0e999]"> Runs Pickleball in India.</span>
@@ -56,13 +57,13 @@ export const WhoWeServeSection = () => {
             >
               {/* Text Description */}
               <div className="text-left mb-10 w-full max-w-3xl">
-                <h3 className="font-dela text-3xl md:text-4xl text-white mb-3">
+                <h3 className="font-dela text-xl sm:text-2xl md:text-[1.8rem] text-white mb-3">
                   {whoWeServe[activeTab].title}
                 </h3>
-                <p className="text-white/50 italic text-sm md:text-base font-light mb-5">
+                <p className={`${sectionBody} text-white/50 italic font-light mb-5`}>
                   "{whoWeServe[activeTab].tagline}"
                 </p>
-                <p className="text-white/80 text-sm md:text-base font-light leading-relaxed">
+                <p className={`${sectionBody} text-white/80 font-light`}>
                   {whoWeServe[activeTab].desc}
                 </p>
               </div>

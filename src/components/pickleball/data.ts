@@ -1,13 +1,35 @@
 import {
-  MapPin, Radio, Camera, Shirt, Monitor, Package,
-  Layers, Target, Video, Users, Trophy, Zap, Star, CheckCircle2
+  MapPin,
+  Radio,
+  Camera,
+  Shirt,
+  Monitor,
+  Package,
+  Layers,
+  Target,
+  Video,
+  Users,
+  Trophy,
+  Zap,
+  Star,
+  CheckCircle2,
 } from "lucide-react";
+import TNPAImg from "@/assets/TNPA LOGO.svg";
+import WPPlImg from "@/assets/wppl.svg";
+import BJ from "@/assets/Bangalore-Jawans-logo.svg";
+import CSC from "@/assets/CSC-logo.svg";
 
 export const trustedBy = [
-  { tag: "TNPA", name: "Tamil Nadu Pickleball Association" },
-  { tag: "WPPL", name: "Women's Premier Pickleball League" },
-  { tag: "BJ", name: "Bangalore Jawans — Men's Pickleball League" },
-  { tag: "CSC", name: "Chennai Super Champs — Men's Pickleball League" },
+  { name: "Tamil Nadu Pickleball Association", img: TNPAImg },
+  { name: "Women's Premier Pickleball League", img: WPPlImg },
+  {
+    name: "Bangalore Jawans — Men's Pickleball League",
+    img: BJ,
+  },
+  {
+    name: "Chennai Super Champs — Men's Pickleball League",
+    img: CSC,
+  },
 ];
 
 export const trustBadges = [
@@ -55,8 +77,14 @@ export const problems = [
 
 export const costPoints = [
   { bold: "Sponsors don't return", sub: "Events look fragmented" },
-  { bold: "Community stops growing", sub: "Social media goes quiet after match day" },
-  { bold: "Next year starts at zero", sub: "No post-event report, no momentum" },
+  {
+    bold: "Community stops growing",
+    sub: "Social media goes quiet after match day",
+  },
+  {
+    bold: "Next year starts at zero",
+    sub: "No post-event report, no momentum",
+  },
 ];
 
 export const services = [
@@ -99,10 +127,17 @@ export const services = [
 ];
 
 export const fullChecklist = [
-  "End-to-end event management", "On-ground production & logistics", "Stage design, LED walls & AV",
-  "Event branding & identity", "Team & event merchandising", "Live broadcasting & streaming",
-  "Social media management", "Photography & videography", "Content creation & reels",
-  "Sponsor branding & collaterals", "Trophies, mementos & branded merchandise",
+  "End-to-end event management",
+  "On-ground production & logistics",
+  "Stage design, LED walls & AV",
+  "Event branding & identity",
+  "Team & event merchandising",
+  "Live broadcasting & streaming",
+  "Social media management",
+  "Photography & videography",
+  "Content creation & reels",
+  "Sponsor branding & collaterals",
+  "Trophies, mementos & branded merchandise",
 ];
 
 export const caseStudies = [
@@ -119,7 +154,13 @@ export const caseStudies = [
       { val: "3", label: "Days" },
     ],
     desc: "End-to-end pickleball event management — stage, LED walls, AV, complete branding, vendor coordination, logistics, social media, and photography. EyeLevel produced India's first professional women's pickleball league from the ground up.",
-    deliverables: ["Full stage & LED walls", "End-to-end AV production", "Complete event branding", "Photography & social media", "All vendor coordination"],
+    deliverables: [
+      "Full stage & LED walls",
+      "End-to-end AV production",
+      "Complete event branding",
+      "Photography & social media",
+      "All vendor coordination",
+    ],
     featured: true,
   },
   {
@@ -146,10 +187,26 @@ export const caseStudies = [
 ];
 
 export const eventFormats = [
-  { icon: Trophy, title: "Professional Leagues", desc: "Multi-day · Multi-team · Full production" },
-  { icon: Zap, title: "WPL Franchise Events", desc: "World Pickleball League standard" },
-  { icon: Users, title: "Association Events", desc: "Official TNPA activations" },
-  { icon: Target, title: "Open Tournaments", desc: "End-to-end tournament management" },
+  {
+    icon: Trophy,
+    title: "Professional Leagues",
+    desc: "Multi-day · Multi-team · Full production",
+  },
+  {
+    icon: Zap,
+    title: "WPL Franchise Events",
+    desc: "World Pickleball League standard",
+  },
+  {
+    icon: Users,
+    title: "Association Events",
+    desc: "Official TNPA activations",
+  },
+  {
+    icon: Target,
+    title: "Open Tournaments",
+    desc: "End-to-end tournament management",
+  },
 ];
 
 export const ecosystemItems = [
@@ -174,11 +231,27 @@ export const ecosystemItems = [
 ];
 
 export const ecosystemStats = [
-  { label: "Pickleball Only", title: "Sport Specialisation", desc: "We don't split focus" },
-  { label: "Inside TNPA", title: "Ecosystem Position", desc: "Official association partner" },
+  {
+    label: "Pickleball Only",
+    title: "Sport Specialisation",
+    desc: "We don't split focus",
+  },
+  {
+    label: "Inside TNPA",
+    title: "Ecosystem Position",
+    desc: "Official association partner",
+  },
   { label: "WPL Franchises", title: "League Level", desc: "India's top teams" },
-  { label: "Pan-India + Global", title: "Geographic Reach", desc: "South India base, national capability" },
-  { label: "All Formats", title: "Event Formats", desc: "League · Open · Association" },
+  {
+    label: "Pan-India + Global",
+    title: "Geographic Reach",
+    desc: "South India base, national capability",
+  },
+  {
+    label: "All Formats",
+    title: "Event Formats",
+    desc: "League · Open · Association",
+  },
 ];
 
 export const processSteps = [
@@ -187,7 +260,12 @@ export const processSteps = [
     time: "1–2 days",
     title: "Brief & Build",
     desc: "Tell us about your event or project. We listen, ask the right questions, and come back with a clear scope, timeline, and team — no jargon, no fluff.",
-    items: ["Discovery call", "Event scoping", "Timeline built", "Team assigned"],
+    items: [
+      "Discovery call",
+      "Event scoping",
+      "Timeline built",
+      "Team assigned",
+    ],
     icon: "📋",
   },
   {
@@ -195,7 +273,12 @@ export const processSteps = [
     time: "Event window",
     title: "Produce & Create",
     desc: "Our team takes full ownership. Production, design, content, coordination — everything runs through one point of contact.",
-    items: ["Full production crew", "Brand execution", "Content creation", "Vendor management"],
+    items: [
+      "Full production crew",
+      "Brand execution",
+      "Content creation",
+      "Vendor management",
+    ],
     icon: "⚡",
   },
   {
@@ -203,7 +286,12 @@ export const processSteps = [
     time: "3–5 days post",
     title: "Deliver & Report",
     desc: "The event runs. Content goes live. Within days, sponsors receive a post-event ROI report. You're ready for next year.",
-    items: ["Live coverage", "Post-event content", "Sponsor ROI report", "Next year planning"],
+    items: [
+      "Live coverage",
+      "Post-event content",
+      "Sponsor ROI report",
+      "Next year planning",
+    ],
     icon: "📊",
   },
 ];
@@ -214,8 +302,16 @@ export const whoWeServe = [
     title: "League & Tournament Owners",
     tagline: "Run a league, not a logistics operation.",
     desc: "You run events that deserve world-class production. EyeLevel handles everything from the first court line to the last trophy lift.",
-    pains: ["6 vendors to manage", "No post-event content", "Sponsors don't return"],
-    delivers: ["End-to-end production", "Post-event sponsor reports", "Content that outlives the event"],
+    pains: [
+      "6 vendors to manage",
+      "No post-event content",
+      "Sponsors don't return",
+    ],
+    delivers: [
+      "End-to-end production",
+      "Post-event sponsor reports",
+      "Content that outlives the event",
+    ],
     cta: "Plan Your Event",
   },
   {
@@ -223,8 +319,16 @@ export const whoWeServe = [
     title: "Sports Associations",
     tagline: "Build the brand. Attract the sponsors. Grow the sport.",
     desc: "Your association needs a brand that attracts national sponsors and builds pickleball across India. We manage your social media, events, photography, and annual sponsorship decks — year-round.",
-    pains: ["Inconsistent brand presence", "Sponsors need ROI proof", "Member growth is slow"],
-    delivers: ["Year-round social management", "Annual sponsorship decks", "Official event production"],
+    pains: [
+      "Inconsistent brand presence",
+      "Sponsors need ROI proof",
+      "Member growth is slow",
+    ],
+    delivers: [
+      "Year-round social management",
+      "Annual sponsorship decks",
+      "Official event production",
+    ],
     cta: "Build Your Brand",
   },
   {
@@ -232,8 +336,16 @@ export const whoWeServe = [
     title: "WPL & Franchise Teams",
     tagline: "Your team is a brand. We build it.",
     desc: "We build your team identity, manage social media, design jerseys, create content, and make your franchise as recognisable off the court as on it.",
-    pains: ["No identity beyond match days", "Fan community not growing", "Sponsors want more visibility"],
-    delivers: ["Full team branding", "Jersey design & print", "Social media management"],
+    pains: [
+      "No identity beyond match days",
+      "Fan community not growing",
+      "Sponsors want more visibility",
+    ],
+    delivers: [
+      "Full team branding",
+      "Jersey design & print",
+      "Social media management",
+    ],
     cta: "Elevate Your Team",
   },
   {
@@ -241,8 +353,16 @@ export const whoWeServe = [
     title: "Court Owners & Clubs",
     tagline: "Fill your courts. Build your community.",
     desc: "You have the infrastructure. We build the community around it — social media, event production, content, and the digital presence that fills your courts.",
-    pains: ["Courts underutilised", "No digital presence", "Events feel ad-hoc"],
-    delivers: ["Community events", "Social media & content", "Club branding & identity"],
+    pains: [
+      "Courts underutilised",
+      "No digital presence",
+      "Events feel ad-hoc",
+    ],
+    delivers: [
+      "Community events",
+      "Social media & content",
+      "Club branding & identity",
+    ],
     cta: "Grow Your Club",
   },
 ];
@@ -250,19 +370,22 @@ export const whoWeServe = [
 export const testimonials = [
   {
     role: "League Owner",
-    quote: "EyeLevel transformed how we run our pickleball events. From the LED walls to the Instagram content — everything was handled. Our sponsors were genuinely impressed with the post-event report.",
+    quote:
+      "EyeLevel transformed how we run our pickleball events. From the LED walls to the Instagram content — everything was handled. Our sponsors were genuinely impressed with the post-event report.",
     name: "Client Name",
     event: "WPPL Season 1",
   },
   {
     role: "Tournament Director",
-    quote: "We've worked with general event agencies before and it was always a coordination nightmare. With EyeLevel, we had one contact, one team, and zero dropped balls. They know pickleball inside out.",
+    quote:
+      "We've worked with general event agencies before and it was always a coordination nightmare. With EyeLevel, we had one contact, one team, and zero dropped balls. They know pickleball inside out.",
     name: "Client Name",
     event: "WPL Franchise Event",
   },
   {
     role: "Association",
-    quote: "The social media work EyeLevel did during and after our event was incredible. Our sponsors kept messaging us asking for the analytics. We've never had that happen before.",
+    quote:
+      "The social media work EyeLevel did during and after our event was incredible. Our sponsors kept messaging us asking for the analytics. We've never had that happen before.",
     name: "Client Name",
     event: "TNPA Event",
   },
@@ -297,7 +420,8 @@ export const faqs = [
 
 export const footerStats = [
   { label: "Response time", value: "< 24 hours" },
-  { label: "Events delivered", value: "4 & counting" },  { label: "Cities covered", value: "Chennai, Bangalore +" },
+  { label: "Events delivered", value: "4 & counting" },
+  { label: "Cities covered", value: "Chennai, Bangalore +" },
   { label: "Sport specialisation", value: "Pickleball only" },
 ];
 
@@ -318,4 +442,7 @@ export const fadeUp = {
   transition: { duration: 0.5 },
 };
 
-export const stagger = (i: number) => ({ ...fadeUp, transition: { ...fadeUp.transition, delay: i * 0.08 } });
+export const stagger = (i: number) => ({
+  ...fadeUp,
+  transition: { ...fadeUp.transition, delay: i * 0.08 },
+});

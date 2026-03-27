@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { fadeUp, processSteps } from "./data";
 import pickleballEventBg from "@/assets/pickleball-event-bg.jpg";
+import { sectionBody, sectionEyebrow, sectionSpacing, sectionTitle } from "./sectionStyles";
 
 export const ProcessSection = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -15,7 +16,7 @@ export const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" className="py-24 md:py-32 w-full bg-[#182a20] font-sans relative overflow-hidden">
+    <section id="process" className={`w-full bg-[#182a20] font-sans relative overflow-hidden ${sectionSpacing}`}>
       {/* Subtle Glow inside Section */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#dce288]/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"></div>
 
@@ -29,13 +30,13 @@ export const ProcessSection = () => {
 
           {/* Header Area */}
           <div className="mb-16 relative z-10">
-            <motion.div {...fadeUp} className="text-[#a8c78c] text-[11px] uppercase tracking-[0.2em] font-bold mb-4">
+            <motion.div {...fadeUp} className={`${sectionEyebrow} text-[#a8c78c] mb-4`}>
               How It Works
             </motion.div>
-            <motion.h2 {...fadeUp} className="font-dela text-4xl sm:text-5xl lg:text-6xl text-white mb-4 leading-[1.1]">
+            <motion.h2 {...fadeUp} className={`${sectionTitle} text-white mb-4`}>
               From Brief to Brilliant.
             </motion.h2>
-            <motion.p {...fadeUp} className="text-white/60 text-lg font-light">
+            <motion.p {...fadeUp} className={`${sectionBody} text-white/60 font-light`}>
               Three steps. One team. Zero coordination headaches.
             </motion.p>
           </div>
