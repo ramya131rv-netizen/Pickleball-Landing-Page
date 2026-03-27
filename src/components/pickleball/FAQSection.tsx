@@ -2,12 +2,13 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Plus, Minus } from "lucide-react";
 import { fadeUp, faqs } from "./data";
+import { sectionBody, sectionEyebrow, sectionSpacing, sectionTitle } from "./sectionStyles";
 
 export const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 md:py-32 px-4 bg-[#102319] border-t border-white/5 font-sans relative overflow-hidden">
+    <section id="faq" className={`${sectionSpacing} bg-[#102319] border-t border-white/5 font-sans relative overflow-hidden`}>
       
       {/* Background gentle glow */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[800px] h-[800px] bg-[#d0e999]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
@@ -17,15 +18,15 @@ export const FAQSection = () => {
           
           {/* Left Column (Sticky Headers) */}
           <div className="lg:sticky lg:top-32 flex flex-col text-left">
-            <motion.div {...fadeUp} className="text-[#d0e999] text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-6">
+            <motion.div {...fadeUp} className={`${sectionEyebrow} text-[#d0e999] mb-6`}>
               FAQs
             </motion.div>
             
-            <motion.h2 {...fadeUp} transition={{ delay: 0.1 }} className="font-dela text-4xl sm:text-5xl md:text-[64px] text-white mb-6 leading-[1.05]">
+            <motion.h2 {...fadeUp} transition={{ delay: 0.1 }} className={`${sectionTitle} text-white mb-6`}>
               Frequently asked<br className="hidden md:block" /> questions
             </motion.h2>
             
-            <motion.p {...fadeUp} transition={{ delay: 0.2 }} className="text-white/60 text-sm sm:text-base mb-10 md:mb-14 max-w-sm font-light leading-relaxed">
+            <motion.p {...fadeUp} transition={{ delay: 0.2 }} className={`${sectionBody} text-white/60 mb-10 md:mb-14 max-w-sm font-light`}>
               Still have questions? We're happy to talk it through directly. Experience intelligent, efficient event management designed to drive progress.
             </motion.p>
             

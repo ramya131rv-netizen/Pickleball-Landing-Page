@@ -4,6 +4,7 @@ import { ArrowRight, Search, Clock, MapPin } from "lucide-react";
 import pickleballEventBg from "@/assets/pickleball-event-bg.jpg";
 import pickleballHeroBg from "@/assets/pickleball-hero-bg.jpg";
 import { fadeUp, stagger, caseStudies, eventFormats } from "./data";
+import { sectionBody, sectionEyebrow, sectionSpacing, sectionTitle } from "./sectionStyles";
 
 
 export const CaseStudiesSection = () => {
@@ -17,28 +18,28 @@ export const CaseStudiesSection = () => {
 
 
   return (
-    <section id="case-studies" className="bg-[#102319] text-white py-24 px-4 font-sans border-t border-[#1a3a2d]">
+    <section id="case-studies" className={`bg-[#102319] text-white font-sans border-t border-[#1a3a2d] ${sectionSpacing}`}>
       <div className="max-w-[1200px] mx-auto">
 
         {/* Header */}
         <div className="flex flex-col items-center justify-center text-center mb-16">
-          <motion.div {...fadeUp} className="text-[#a8c78c] text-[10px] uppercase font-bold tracking-[0.2em] mb-4 font-dela">
+          <motion.div {...fadeUp} className={`${sectionEyebrow} mb-4 font-dela text-[#a8c78c]`}>
             Pickleball Event Management India
           </motion.div>
-          <motion.h2 {...fadeUp} className="font-dela text-4xl sm:text-5xl lg:text-[64px] leading-tight mb-4">
+          <motion.h2 {...fadeUp} className={`${sectionTitle} mb-4`}>
             Every Format. Every Scale.
             <br />
             <span className="text-[#d0e999]">Flawlessly Delivered.</span>
           </motion.h2>
-          <motion.p {...fadeUp} className="text-white/60 text-sm sm:text-base max-w-2xl font-light">
+          <motion.p {...fadeUp} className={`${sectionBody} max-w-2xl font-light text-white/60`}>
             From 3-day professional leagues to corporate events and national tournaments.
           </motion.p>
         </div>
 
         {/* Case Studies "Blog" Header */}
         <div className="mb-8">
-          <h3 className="font-dela text-2xl sm:text-3xl text-white mb-2">Case Studies</h3>
-          <p className="text-white/60 text-sm font-light mb-6">Detailed breakdowns of our flagship events and complete tournament operations.</p>
+          <h3 className="font-dela text-xl sm:text-2xl md:text-[1.8rem] text-white mb-2">Case Studies</h3>
+          <p className={`${sectionBody} mb-6 font-light text-white/60`}>Detailed breakdowns of our flagship events and complete tournament operations.</p>
 
           {/* Tabs */}
           <div className="flex overflow-x-auto gap-2 pb-2 hide-scrollbar">
@@ -84,7 +85,7 @@ export const CaseStudiesSection = () => {
               <span>{featuredStudy.location}</span>
             </div>
 
-            <h3 className="font-dela text-2xl sm:text-3xl text-white mb-3 leading-tight group-hover:text-[#d0e999] transition-colors">
+            <h3 className="font-dela text-xl sm:text-2xl md:text-[1.8rem] text-white mb-3 leading-tight group-hover:text-[#d0e999] transition-colors">
               {featuredStudy.title}
             </h3>
 
@@ -92,7 +93,7 @@ export const CaseStudiesSection = () => {
               {featuredStudy.subtitle}
             </p>
 
-            <p className="text-white/60 text-sm leading-relaxed font-light mb-8">
+            <p className={`${sectionBody} font-light mb-8 text-white/60`}>
               {featuredStudy.desc}
             </p>
 
@@ -180,7 +181,7 @@ export const CaseStudiesSection = () => {
         {/* Horizontal Event Formats (4 Key Points with Images instead of Icons) */}
         <div>
           <div className="mb-8 border-b border-white/5 pb-4">
-            <h3 className="font-dela text-2xl sm:text-3xl text-white">4 Pillars of Production</h3>
+            <h3 className="font-dela text-xl sm:text-2xl md:text-[1.8rem] text-white">4 Pillars of Production</h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
