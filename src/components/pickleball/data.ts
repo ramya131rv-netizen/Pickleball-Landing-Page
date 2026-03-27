@@ -59,7 +59,7 @@ export const oldWayVendors = [
 export const problems = [
   {
     icon: "🔗",
-    title: "The Vendor Problem",
+    title: "The Vendor Problems",
     titleColor: "#FF6B6B",
     desc: "Juggling 6 vendors separately leads to confusion and chaos. A single drop in service disrupts the entire event.",
     cta: "Simplify Vendor Management",
