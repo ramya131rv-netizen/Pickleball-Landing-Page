@@ -28,6 +28,7 @@ const PickleballMarketing = () => {
       <ProcessSection />
       <WhoWeServeSection />
       <TestimonialsSection />
+      <OurPartners />
       <FAQSection />
       <FinalCTASection />
       <MobileFixedCTA />
