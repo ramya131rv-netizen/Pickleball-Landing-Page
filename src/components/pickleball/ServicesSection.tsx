@@ -8,12 +8,12 @@ import { sectionBody, sectionEyebrow, sectionSpacing, sectionSubtitle, sectionTi
 
 export const ServicesSection = () => {
   return (
-    <section id="services" className={`relative overflow-hidden ${sectionSpacing}`} style={{ backgroundColor: "#253e35" }}>
+    <section id="services" className={`relative overflow-hidden bg-background-deep ${sectionSpacing}`}>
       <div className="relative z-10 mx-auto max-w-6xl">
         <motion.div {...fadeUp} className="mb-3 text-center">
           <span className={`${sectionEyebrow} text-foreground/40`}>Full-Stack Pickleball Services</span>
         </motion.div>
-        <motion.h2 {...fadeUp} className={`${sectionTitle} mb-2 text-center text-foreground`}>
+        <motion.h2 {...fadeUp} className={`${sectionTitle} mb-2 text-center text-foreground `}>
           Everything You Need To Run
           <br className="hidden sm:block" />
           A Successful Pickleball Event
@@ -22,10 +22,10 @@ export const ServicesSection = () => {
           All Managed Under One Roof
         </motion.h3>
         <motion.p {...fadeUp} className={`${sectionBody} mx-auto mb-12 max-w-2xl text-center text-foreground/50`}>
-          From production and branding to sponsorship and broadcast â€” we plan, execute and scale your entire tournament.
+          From production and branding to sponsorship and broadcast we plan, execute and scale your entire tournament.
         </motion.p>
 
-        <div className="mb-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mb-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
           {services.map((s, i) => (
             <motion.div
               key={i}
@@ -56,7 +56,7 @@ export const ServicesSection = () => {
         </div>
 
         <motion.div {...fadeUp} className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-          <div className="space-y-1.5">
+          <div className="flex flex-col gap-2 lg:flex-row lg:items-center">
             {["End-to-End Tournament Management", "Multi-City League Experience", "Sponsor Delivery & ROI Tracking"].map((item, i) => (
               <div key={i} className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
@@ -65,12 +65,12 @@ export const ServicesSection = () => {
             ))}
           </div>
           <div className="flex flex-wrap gap-3">
-            <Button variant="lime" size="lg" className="group font-bold" onClick={() => document.getElementById("final-cta")?.scrollIntoView({ behavior: "smooth" })}>
+            <Button variant="lime" size="lg" className="group bg-lime font-bold" onClick={() => document.getElementById("final-cta")?.scrollIntoView({ behavior: "smooth" })}>
               Plan My Pickleball Event
             </Button>
-            <Button variant="outline" size="lg" className="font-semibold">
+            {/* <Button variant="outline" size="lg" className="font-semibold">
               Download Services Deck
-            </Button>
+            </Button> */}
           </div>
         </motion.div>
       </div>

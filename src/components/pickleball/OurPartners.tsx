@@ -1,50 +1,55 @@
 import { motion } from "framer-motion";
-import { Video, Trophy, Radio, Settings, Layers } from "lucide-react";
+
+import rizzfit from "@/assets/partners/rizzfit.svg";
+import production from "@/assets/partners/production.png";
+import health from "@/assets/partners/health.png";
+
+const partners = [
+  { name: "Production", logo: production },
+  { name: "Scoring", logo: rizzfit },
+  // { name: "Broadcast", logo: production },
+  // { name: "Technical", logo: production },
+  { name: "Matting", logo: health },
+];
 
 const OurPartners = () => {
-  const partners = [
-    { name: "Production Name", icon: Video },
-    { name: "Scoring Name", icon: Trophy },
-    { name: "Live Broadcasting Name", icon: Radio },
-    { name: "Technical Name", icon: Settings },
-    { name: "Event Matting Name", icon: Layers },
-  ];
-
-  // Duplicate the array to create a seamless infinite loop
-  const duplicatedPartners = [...partners, ...partners, ...partners];
-
   return (
-    <section className="py-12 bg-[#182a20] relative overflow-hidden border-t border-b border-[#dce288]/10">
-      {/* Background Subtle Glow */}
-      <div className="absolute top-1/2 left-1/2 w-full h-[100px] bg-[#dce288]/5 blur-[80px] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"></div>
+    <section className="relative overflow-hidden bg-background-deep">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[hsl(var(--background))] via-[hsl(var(--background))]/85 to-transparent sm:w-28" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[hsl(var(--background))] via-[hsl(var(--background))]/85 to-transparent sm:w-28" />
 
-      {/* Fade edges for smooth entry/exit */}
-      <div className="absolute inset-y-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-[#182a20] to-transparent z-10 pointer-events-none"></div>
-      <div className="absolute inset-y-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-[#182a20] to-transparent z-10 pointer-events-none"></div>
-      
-      <div className="flex overflow-hidden relative z-0">
-        <motion.div
-          animate={{ x: ["0%", "-33.333333%"] }}
-          transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-          className="flex gap-16 md:gap-24 items-center whitespace-nowrap pl-16 md:pl-24"
-        >
-          {duplicatedPartners.map((partner, i) => {
-            const Icon = partner.icon;
-            return (
-              <div 
-                key={i} 
-                className="flex items-center gap-4 text-white/40 hover:text-white transition-colors duration-500 group cursor-default"
+      <div className="mx-auto max-w-[1400px]">
+        <div className="relative overflow-hidden rounded-none border-y border-white/8 bg-[#143528] py-7 sm:py-8">
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0))]" />
+
+          <motion.div
+            className="relative z-[1] flex w-max items-center"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          >
+            {[0, 1].map((setIndex) => (
+              <div
+                key={setIndex}
+                aria-hidden={setIndex === 1}
+                className="flex shrink-0 items-center gap-14 px-8 sm:gap-24 sm:px-14 lg:gap-32"
               >
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#dce288]/20 group-hover:border-[#dce288]/50 group-hover:shadow-[0_0_20px_rgba(220,226,136,0.2)] transition-all duration-500">
-                  <Icon className="w-6 h-6 text-white/50 group-hover:text-[#dce288] transition-colors duration-500" />
-                </div>
-                <span className="font-dela text-xl tracking-wide uppercase mt-1">
-                  {partner.name}
-                </span>
+                {partners.map((partner) => (
+                  <div
+                    key={`${partner.name}-${setIndex}`}
+                    className="group flex h-10 w-[120px] shrink-0 items-center justify-center sm:h-12 sm:w-[170px] lg:w-[190px]"
+                  >
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="max-h-full w-full object-contain opacity-85 grayscale-[0.08] transition-all duration-300 group-hover:scale-[1.03] group-hover:opacity-100"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
               </div>
-            );
-          })}
-        </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

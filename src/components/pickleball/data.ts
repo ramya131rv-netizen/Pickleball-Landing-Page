@@ -13,36 +13,45 @@ import {
   Zap,
   Star,
   CheckCircle2,
+  Tag,
 } from "lucide-react";
-import TNPAImg from "@/assets/TNPA LOGO.svg";
-import WPPlImg from "@/assets/wppl.svg";
+import TNPAImg from "@/assets/TrustedBy/TNPA_LOGO.png";
+import WPPlImg from "@/assets/TrustedBy/wppl-Inverse.png";
 import BJ from "@/assets/Bangalore-Jawans-logo.svg";
 import CSC from "@/assets/CSC-logo.svg";
+import TNPPL from "@/assets/TrustedBy/TNPPL LOGO-S1.png";
 
-import Wppl from "@/assets/Wppl.png";
-import bj from "@/assets/BJ.png";
-import csc from "@/assets/Csc.jpg";
-import TNPA from "../../assets/tnpa.jpg";
+// casestudies
+import Wppl from "@/assets/case-studies/wppl.webp";
+import TNPA from "@/assets/case-studies/tnpa.webp";
+import bj from "@/assets/case-studies/bj.webp";
+import csc from "@/assets/case-studies/csc.webp";
+
 import professional from "../../assets/professional.png";
 import association from "../../assets/association.png";
-
 
 export const trustedBy = [
   { name: "Tamil Nadu Pickleball Association", img: TNPAImg },
   { name: "Women's Premier Pickleball League", img: WPPlImg },
   {
-    name: "Bangalore Jawans — Men's Pickleball League",
+    name: "Bengaluru Jawans",
+    tag: "WPBL",
     img: BJ,
   },
   {
-    name: "Chennai Super Champs — Men's Pickleball League",
+    name: "Chennai Super Champs",
+    tag: "WPBL",
     img: CSC,
+  },
+  {
+    name: "Tamil Nadu Pickleball Premier League",
+    img: TNPPL,
   },
 ];
 
 export const trustBadges = [
   "Official Agency Partner — Tamil Nadu Pickleball Association",
-  "WPL Franchise Teams — Bangalore Jawans & Chennai Super Champs",
+  "WPBL Franchise Teams — Bengaluru Jawans & Chennai Super Champs",
   "Producers of the Women's Premier Pickleball League",
   "India's Only Dedicated Pickleball Agency",
 ];
@@ -58,7 +67,6 @@ export const oldWayVendors = [
 
 export const problems = [
   {
-    icon: "🔗",
     title: "The Vendor Problems",
     titleColor: "#FF6B6B",
     desc: "Juggling 6 vendors separately leads to confusion and chaos. A single drop in service disrupts the entire event.",
@@ -66,20 +74,18 @@ export const problems = [
     ctaColor: "#FF6B6B",
   },
   {
-    icon: "📢",
     title: "The Brand Problem",
-    titleColor: "#4DABF7",
+    titleColor: "#FF6B6B",
     desc: "Events should build your brand, but without proper follow-up, the momentum is lost post-event.",
     cta: "Improve Brand Recall",
-    ctaColor: "#4DABF7",
+    ctaColor: "#FF6B6B",
   },
   {
-    icon: "📈",
     title: "The Growth Problem",
-    titleColor: "#FFB347",
+    titleColor: "#FF6B6B",
     desc: "Events feel like you're starting from square one every time. It's difficult to repeat and grow when nothing is optimized.",
     cta: "Boost Event Growth",
-    ctaColor: "#FFB347",
+    ctaColor: "#FF6B6B",
   },
 ];
 
@@ -174,18 +180,18 @@ export const caseStudies = [
   },
   {
     img: csc,
-    tag: "WPL",
+    tag: "WPBL",
     location: "Chennai",
     title: "Chennai Super Champs Pickleball Open",
-    subtitle: "WPL Franchise Open",
-    desc: "End-to-end event management, court branding, production, photography & social media — WPL franchise standards.",
+    subtitle: "WPBL Franchise Open",
+    desc: "End-to-end event management, court branding, production, photography & social media — WPBL franchise standards.",
   },
   {
     img: bj,
-    tag: "WPL",
-    location: "Bangalore",
-    title: "Bangalore Jawans Bangalore Open",
-    subtitle: "WPL Franchise Open",
+    tag: "WPBL",
+    location: "Bengaluru",
+    title: "Bengaluru Jawans Bengaluru Open",
+    subtitle: "WPBL Franchise Open",
     desc: "End-to-end event management, branding, production, and team merchandising — EyeLevel's first cross-city delivery.",
   },
   {
@@ -199,10 +205,30 @@ export const caseStudies = [
 ];
 
 export const eventFormats = [
-  { img: professional, icon: Trophy, title: "Professional Leagues", desc: "Multi-day · Multi-team · Full production" },
-  { img: association, icon: Zap, title: "WPL Franchise Events", desc: "World Pickleball League standard" },
-  { img: Wppl, icon: Users, title: "Association Events", desc: "Official TNPA activations" },
-  { img: Wppl, icon: Target, title: "Open Tournaments", desc: "End-to-end tournament management" },
+  {
+    img: professional,
+    icon: Trophy,
+    title: "Professional Leagues",
+    desc: "Multi-day · Multi-team · Full production",
+  },
+  {
+    img: association,
+    icon: Zap,
+    title: "WPBL Franchise Events",
+    desc: "World Pickleball League standard",
+  },
+  {
+    img: Wppl,
+    icon: Users,
+    title: "Association Events",
+    desc: "Official TNPA activations",
+  },
+  {
+    img: Wppl,
+    icon: Target,
+    title: "Open Tournaments",
+    desc: "End-to-end tournament management",
+  },
 ];
 
 export const ecosystemItems = [
@@ -215,7 +241,7 @@ export const ecosystemItems = [
   {
     icon: Trophy,
     title: "Franchise Marketing Agency",
-    org: "Bangalore Jawans & Chennai Super Champs — WPL",
+    org: "Bengaluru Jawans & Chennai Super Champs — WPBL",
     desc: "Two of India's most prominent World Pickleball League franchises trust EyeLevel for event management, branding, and marketing.",
   },
   {
@@ -237,7 +263,11 @@ export const ecosystemStats = [
     title: "Ecosystem Position",
     desc: "Official association partner",
   },
-  { label: "WPL Franchises", title: "League Level", desc: "India's top teams" },
+  {
+    label: "WPBL Franchises",
+    title: "League Level",
+    desc: "India's top teams",
+  },
   {
     label: "Pan-India + Global",
     title: "Geographic Reach",
@@ -329,7 +359,7 @@ export const whoWeServe = [
   },
   {
     icon: Shirt,
-    title: "WPL & Franchise Teams",
+    title: "WPBL & Franchise Teams",
     tagline: "Your team is a brand. We build it.",
     desc: "We build your team identity, manage social media, design jerseys, create content, and make your franchise as recognisable off the court as on it.",
     pains: [
@@ -376,7 +406,7 @@ export const testimonials = [
     quote:
       "We've worked with general event agencies before and it was always a coordination nightmare. With EyeLevel, we had one contact, one team, and zero dropped balls. They know pickleball inside out.",
     name: "Client Name",
-    event: "WPL Franchise Event",
+    event: "WPBL Franchise Event",
   },
   {
     role: "Association",
@@ -415,8 +445,7 @@ export const faqs = [
 ];
 
 export const footerStats = [
-  { label: "Response time", value: "< 24 hours" },
-  { label: "Events delivered", value: "4 & counting" }, { label: "Cities covered", value: "Chennai, Bangalore +" },
+  { label: "Response time", value: "< 24 Hr" },
   { label: "Events delivered", value: "4 & counting" },
   { label: "Cities covered", value: "Chennai, Bangalore +" },
   { label: "Sport specialisation", value: "Pickleball only" },

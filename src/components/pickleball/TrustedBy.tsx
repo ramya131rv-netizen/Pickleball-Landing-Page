@@ -6,11 +6,9 @@ const TrustedBy = () => {
     <motion.div
       {...fadeUp}
       transition={{ delay: 0.3 }}
-      className="mb-8 flex flex-col items-center gap-5 px-4 text-center sm:gap-6"
+      className=" pb-14 flex flex-col items-center bgap-5 px-4 bg-background-deep  text-center sm:gap-6"
     >
-      <div
-        className="inline-flex items-center gap-2 px-4 py-2 sm:px-5"
-      >
+      <div className="inline-flex items-center gap-2 px-4 py-5 sm:px-5">
         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/80 sm:text-xs lg:text-sm mt-2.5">
           Trusted By
         </span>
@@ -18,7 +16,7 @@ const TrustedBy = () => {
       <motion.div
         {...fadeUp}
         transition={{ delay: 0.35 }}
-        className="grid w-full max-w-6xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4"
+        className="grid w-full max-w-6xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5"
       >
         {trustedBy.map((t, i) => (
           <div
@@ -30,10 +28,10 @@ const TrustedBy = () => {
               <img
                 src={t.img}
                 alt={t.name}
-                className="max-h-full w-auto max-w-[72px] object-contain sm:max-w-[96px] lg:max-w-[120px]"
+                className="max-h-full w-auto max-w-[72px] object-contain sm:max-w-[96px] lg:max-w-[100px]"
               />
             </div>
-            <span
+            {/* <span
               className="block font-dela text-xs sm:text-sm lg:text-lg"
               style={{
                 color:
@@ -45,10 +43,12 @@ const TrustedBy = () => {
                         ? "#FFB347"
                         : "#FF6B6B",
               }}
-            >
-            </span>
-            <span className="mt-1 block text-[10px] leading-tight text-foreground/40 sm:text-xs">
+            ></span> */}
+            <span className="mt-1 block text-[10px] leading-tight text-foreground/80 sm:text-xs">
               {t.name}
+            </span>
+            <span className="mt-1 text-white font-bold block text-[10px] leading-tight text-foreground/40 sm:text-xs">
+              {t.tag}
             </span>
           </div>
         ))}

@@ -4,7 +4,7 @@ import eyelevelLogo from "@/assets/eyelevel_logo.svg";
 
 export const Footer = () => {
   return (
-    <footer className="bg-forest-dark py-16 px-4">
+    <footer className="bg-background py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 items-start gap-12 mb-12">
           {/* Brand */}
@@ -45,8 +45,8 @@ export const Footer = () => {
             <div className="space-y-2">
               {[
                 "Tamil Nadu Pickleball Association",
-                "Bangalore Jawans (WPL)",
-                "Chennai Super Champs (WPL)",
+                "Bengaluru Jawans (WPBL)",
+                "Chennai Super Champs (WPBL)",
                 "Women's Premier Pickleball League",
               ].map((a, i) => (
                 <div key={i} className="flex items-center gap-2">
@@ -58,7 +58,7 @@ export const Footer = () => {
           </div>
           {/* Social Media */}
           <div className="w-[80%]">
-            <h4 className="font-dela text-sm text-foreground mb-4">Connect</h4>
+            <h4 className="font-dela text-sm text-foreground mb-4">Connect Us</h4>
             <div className="grid grid-cols-3 gap-4">
               {[
                 {

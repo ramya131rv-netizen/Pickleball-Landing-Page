@@ -14,6 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
+        sans: ['"Bricolage Grotesque"', "sans-serif"],
+        bricolage: ['"Bricolage Grotesque"', "sans-serif"],
         dela: ['"Dela Gothic One"', 'cursive'],
       },
       colors: {
@@ -21,13 +23,15 @@ export default {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
+        "background-deep": "hsl(var(--background-deep))",
         foreground: "hsl(var(--foreground))",
         forest: {
           DEFAULT: "#1a3a2d",
+          deep: "#0D1F1A",
           dark: "#0f2a1f",
         },
         lime: {
-          DEFAULT: "#D4E86F",
+          DEFAULT: "#E2FEA5",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -89,5 +93,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  // plugins: [require("tailwindcss-animate")],
 } satisfies Config;

@@ -5,13 +5,13 @@ import { fadeUp, faqs } from "./data";
 import { sectionBody, sectionEyebrow, sectionSpacing, sectionTitle } from "./sectionStyles";
 
 export const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className={`${sectionSpacing} bg-[#102319] border-t border-white/5 font-sans relative overflow-hidden`}>
+    <section id="faq" className={`${sectionSpacing} bg-background-deep border-t border-white/5 font-sans relative overflow-hidden`}>
       
       {/* Background gentle glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[800px] h-[800px] bg-[#d0e999]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[800px] h-[800px] bg-lime/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
       <div className="max-w-[1300px] mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-16 lg:gap-24 items-start">
@@ -33,7 +33,7 @@ export const FAQSection = () => {
             <motion.div {...fadeUp} transition={{ delay: 0.3 }}>
               <button 
                 onClick={() => document.getElementById("final-cta")?.scrollIntoView({ behavior: "smooth" })}
-                className="px-6 py-3.5 bg-[#d0e999] hover:bg-[#bce070] text-[#102319] text-xs sm:text-sm font-bold uppercase tracking-widest rounded-full flex items-center justify-between gap-4 transition-all duration-300 shadow-[0_5px_25px_rgba(208,233,153,0.2)] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(208,233,153,0.4)] w-fit group"
+                className="px-6 py-3.5  text-[#102319] text-xs sm:text-sm font-bold uppercase tracking-widest rounded-full flex items-center justify-between gap-4 transition-all duration-300  hover:-translate-y-1  w-fit group"
               >
                 <span>Talk to Us</span>
                 <span className="w-6 h-6 rounded-full border-[1.5px] border-[#102319] flex items-center justify-center shrink-0">
@@ -70,7 +70,7 @@ export const FAQSection = () => {
                         <span className={`font-mono text-xs sm:text-sm transition-colors duration-300 mt-1 sm:mt-0 ${
                           isActive ? 'text-[#d0e999] opacity-100 font-bold' : 'text-white/30 font-semibold'
                         }`}>
-                          {String(i + 1).padStart(3, '0')}
+                          {String(i + 1).padStart(2, '0')}
                         </span>
                         <h3 className={`text-base sm:text-lg lg:text-xl font-semibold transition-colors duration-300 leading-snug ${
                           isActive ? 'text-white' : 'text-white/80 group-hover:text-white'
@@ -81,7 +81,7 @@ export const FAQSection = () => {
                       
                       <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                         isActive 
-                          ? 'bg-[#d0e999] text-[#102319]' 
+                          ? 'bg-lime text-[#102319]' 
                           : 'bg-transparent text-white/50 border border-white/10 group-hover:border-white/30'
                       }`}>
                         {isActive ? <Minus className="w-4 h-4 sm:w-5 sm:h-5" /> : <Plus className="w-4 h-4 sm:w-5 sm:h-5" />}

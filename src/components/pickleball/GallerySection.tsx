@@ -4,6 +4,15 @@ import { Camera, ChevronLeft, ChevronRight } from "lucide-react";
 import pickleballHeroBg from "@/assets/pickleball-hero-bg.jpg";
 import pickleballEventBg from "@/assets/pickleball-event-bg.jpg";
 import { fadeUp } from "./data";
+import { g } from "vitest/dist/chunks/suite.d.FvehnV49.js";
+
+// gallery
+import gallery1 from "@/assets/gallery/gallery-1.webp";
+import gallery2 from "@/assets/gallery/gallery-2.webp";
+import gallery3 from "@/assets/gallery/gallery-3.webp";
+import gallery4 from "@/assets/gallery/gallery-4.webp";
+import gallery5 from "@/assets/gallery/gallery-5.webp";
+import gallery6 from "@/assets/gallery/gallery-6.webp";
 
 export const GallerySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,26 +20,17 @@ export const GallerySection = () => {
 
   const galleryItems = [
     {
-      src: pickleballEventBg,
+      src: gallery1,
       caption: "WPPL Season 1 — Official Stage & LED Setup",
     },
     {
-      src: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=1200&auto=format&fit=crop",
+      src: gallery2,
       caption: "WPPL Season 1 — Match action on court",
     },
-    { src: pickleballHeroBg, caption: "WPPL Season 1 — Trophy Ceremony" },
-    {
-      src: "https://images.unsplash.com/photo-1554068865-c72eb88d3e87?q=80&w=1200&auto=format&fit=crop",
-      caption: "Chennai Super Champs — Court branding",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1622279457486-640c43431653?q=80&w=1200&auto=format&fit=crop",
-      caption: "Bangalore Jawans — Event branding",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=1200&auto=format&fit=crop",
-      caption: "TNPA Women's Day — Players action shot",
-    },
+    { src: gallery3, caption: "WPPL Season 1 — Trophy Ceremony" },
+    { src: gallery4, caption: "Chennai Super Champs — Court branding" },
+    { src: gallery5, caption: "Bengaluru Jawans — Event branding" },
+    { src: gallery6, caption: "TNPA — Players action shot" },
   ];
 
   const handleNext = () => {
@@ -78,20 +78,17 @@ export const GallerySection = () => {
   };
 
   return (
-    <section
-      className="py-24 md:py-32 px-4 relative overflow-hidden"
-      style={{ backgroundColor: "#253e35" }}
-    >
+    <section className="py-16 px-4 relative overflow-hidden bg-background-deep">
       <div className="max-w-[1400px] mx-auto">
-        <motion.div {...fadeUp} className="text-center mb-6">
-          <span className="text-[10px] uppercase tracking-[0.2em] text-[#d0e999]/70 font-bold font-sans">
+        <motion.div {...fadeUp} className="text-center mb-4">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-[#d0e999]/70 font-bold">
             In Action
           </span>
         </motion.div>
 
         <motion.h2
           {...fadeUp}
-          className="font-dela text-4xl sm:text-5xl md:text-6xl text-white text-center mb-6 leading-tight"
+          className="font-dela text-4xl sm:text-5xl md:text-6xl text-white text-center mb-4 leading-tight"
         >
           See What We Build.
         </motion.h2>
@@ -149,7 +146,7 @@ export const GallerySection = () => {
                   ></div>
 
                   {/* Caption for Center Item */}
-                  <motion.div
+                  {/* <motion.div
                     animate={{ opacity: currentStyle.x === "0%" ? 1 : 0 }}
                     transition={{ duration: 0.4 }}
                     className="absolute bottom-0 left-0 w-full p-8 md:p-12 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none flex items-center justify-between"
@@ -165,7 +162,7 @@ export const GallerySection = () => {
                     <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shrink-0 border border-white/30 hidden sm:flex">
                       <Camera className="w-5 h-5 text-white" />
                     </div>
-                  </motion.div>
+                  </motion.div> */}
                 </motion.div>
               );
             })}
@@ -175,13 +172,13 @@ export const GallerySection = () => {
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 md:px-12 z-20 pointer-events-none">
             <button
               onClick={handlePrev}
-              className="w-10 h-10 rounded-full bg-[#253e35]/50 backdrop-blur-md border border-white/20 text-white flex items-center justify-center pointer-events-auto hover:bg-[#d0e999] hover:text-[#253e35] hover:border-[#d0e999] transition-all duration-300"
+              className="w-10 h-10 rounded-full bg-[#253e35]/50 backdrop-blur-md border border-white/20 text-white flex items-center justify-center pointer-events-auto hover:bg-lime hover:text-[#253e35] hover:border-[#d0e999] transition-all duration-300"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={handleNext}
-              className="w-10 h-10 rounded-full bg-[#253e35]/50 backdrop-blur-md border border-white/20 text-white flex items-center justify-center pointer-events-auto hover:bg-[#d0e999] hover:text-[#253e35] hover:border-[#d0e999] transition-all duration-300"
+              className="w-10 h-10 rounded-full bg-[#253e35]/50 backdrop-blur-md border border-white/20 text-white flex items-center justify-center pointer-events-auto hover:bg-lime hover:text-[#253e35] hover:border-[#d0e999] transition-all duration-300"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -196,7 +193,7 @@ export const GallerySection = () => {
               onClick={() => handleDotClick(i)}
               className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                 currentIndex === i
-                  ? "bg-[#d0e999] scale-125"
+                  ? "bg-lime scale-125"
                   : "bg-white/20 hover:bg-white/40"
               }`}
             />

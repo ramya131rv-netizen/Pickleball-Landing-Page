@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200..800&family=Dela+Gothic+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,8 @@
 
 @layer base {
   :root {
-    --background: 153 37% 16%;
+    --background: 159 37.1% 13.7%;
+    --background-deep: 163 40.9% 8.6%;
     --foreground: 0 0% 100%;
 
     --card: 153 37% 16%;
@@ -15,7 +16,7 @@
     --popover: 153 37% 16%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 72 68% 67%;
+    --primary: 79 97.8% 82.2%;
     --primary-foreground: 153 37% 16%;
 
     --secondary: 153 25% 20%;
@@ -53,6 +54,13 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground;
+  }
+}
+
+@layer components {
+  .section-theme-deep {
+    background-color: hsl(var(--background-deep));
+    @apply text-foreground;
   }
 }

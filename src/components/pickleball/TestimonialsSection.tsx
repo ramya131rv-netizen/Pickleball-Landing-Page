@@ -9,7 +9,7 @@ export const TestimonialsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className={`w-full bg-gradient-to-br from-[#163027] to-[#253e35] border-y border-white/5 font-sans overflow-hidden ${sectionSpacing}`}>
+    <section className={`w-full bg-background-deep border-y border-white/5 font-sans overflow-hidden ${sectionSpacing}`}>
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
 
         {/* 1. Main Container */}
@@ -49,7 +49,7 @@ export const TestimonialsSection = () => {
                 >
                   How Pickleball Teams Describe
                   <br />
-                  <span className="text-[#d0e999]"> Working With EyeLevel.</span>
+                  <span className="text-[#d0e999]"> Working With EyeLevel</span>
                 </motion.h2>
               </div>
 
@@ -102,7 +102,7 @@ export const TestimonialsSection = () => {
                           />
                         ))}
                       </div>
-                      <span className={`px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.1em] uppercase transition-colors duration-300 ${isActive ? "bg-[#d0e999] text-[#102319]" : "bg-[#d0e999]/10 text-[#d0e999]"
+                      <span className={`px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.1em] uppercase transition-colors duration-300 ${isActive ? "bg-lime text-[#102319]" : "bg-lime/10 text-[#d0e999]"
                         }`}>
                         {t.role}
                       </span>
@@ -115,7 +115,7 @@ export const TestimonialsSection = () => {
 
                     <p className={`text-[11px] font-bold tracking-wider mt-auto transition-colors duration-300 relative z-10 uppercase ${isActive ? "text-[#d0e999]" : "text-white/30"
                       }`}>
-                      {t.name} <span className="text-white/20 mx-2">|</span> {t.event}
+                      {t.event}
                     </p>
                   </motion.div>
                 );
@@ -125,7 +125,7 @@ export const TestimonialsSection = () => {
           </div>
 
           {/* 5. CTA Section (Bottom Bar) */}
-          <div className="bg-[#102319]/40 border border-white/5 p-6 md:p-8 mt-10 md:mt-16 mb-4 lg:mb-8 rounded-[1.5rem] lg:rounded-[2rem] flex flex-col sm:flex-row items-center justify-between gap-6 backdrop-blur-md shadow-xl w-full">
+          <div className="bg-background/40 border border-white/5 p-6 md:p-8 mt-10 md:mt-16 mb-4 lg:mb-8 rounded-[1.5rem] lg:rounded-[2rem] flex flex-col sm:flex-row items-center justify-between gap-6 backdrop-blur-md shadow-xl w-full">
             <div className="flex flex-col text-center sm:text-left">
               <span className="text-white text-lg md:text-xl font-medium tracking-wide">
                 Are you the next one?
@@ -137,7 +137,7 @@ export const TestimonialsSection = () => {
 
             <button
               onClick={() => document.getElementById("final-cta")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-8 py-4 bg-[#d0e999] hover:bg-[#bce070] text-[#102319] text-[13px] font-extrabold uppercase tracking-widest rounded-xl transition-all duration-300 hover:shadow-[0_8px_30px_rgba(208,233,153,0.3)] hover:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-3"
+              className="px-8 py-4 bg-lime hover:bg-[#bce070] text-[#102319] text-[13px] font-extrabold uppercase tracking-widest rounded-xl transition-all duration-300 hover:shadow-[0_8px_30px_rgba(208,233,153,0.3)] hover:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-3"
             >
               Work With EyeLevel <ArrowRight className="w-4 h-4" />
             </button>

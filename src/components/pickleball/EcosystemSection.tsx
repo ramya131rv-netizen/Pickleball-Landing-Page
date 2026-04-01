@@ -5,7 +5,7 @@ import { sectionBody, sectionEyebrow, sectionSpacing, sectionTitle } from "./sec
 
 export const EcosystemSection = () => {
   return (
-    <section className={`relative overflow-hidden ${sectionSpacing}`} style={{ backgroundColor: "#102319" }}>
+    <section className={`relative overflow-hidden bg-background ${sectionSpacing}`}>
       <div className="pointer-events-none absolute inset-x-0 top-1/2 h-[800px] -translate-y-1/2 opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#d0e999]/20 via-transparent to-transparent blur-3xl" />
       </div>
@@ -36,7 +36,7 @@ export const EcosystemSection = () => {
                 viewport={{ once: true }}
                 className={`flex flex-col items-start py-8 text-left md:py-0 ${i === 0 ? "md:pr-8" : i === 1 ? "md:px-8" : "md:pl-8"}`}
               >
-                <h3 className={`mb-3 font-dela text-xl sm:text-2xl ${i === 1 ? "text-[#d0e999]" : "text-white"}`}>{item.title}</h3>
+                <h3 className={`mb-3 max-w-[90%] font-dela text-xl sm:text-2xl ${i === 1 ? "text-[#d0e999]" : "text-white"}`}>{item.title}</h3>
                 <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.1em] text-[#d0e999]/80 sm:text-[11px]">{item.org}</p>
                 <p className={`${sectionBody} text-white/70`}>{item.desc}</p>
               </motion.div>
@@ -45,7 +45,7 @@ export const EcosystemSection = () => {
 
           <button
             onClick={() => document.getElementById("final-cta")?.scrollIntoView({ behavior: "smooth" })}
-            className="mt-6 rounded-lg bg-[#d0e999] px-8 py-3 text-[11px] font-extrabold uppercase tracking-widest text-[#102319] shadow-[0_0_20px_rgba(208,233,153,0.2)] transition-colors hover:bg-[#bce070]"
+            className="mt-6 rounded-lg bg-lime px-8 py-3 text-[11px] font-extrabold uppercase tracking-widest text-[#102319] shadow-[0_0_20px_rgba(208,233,153,0.2)] transition-colors hover:bg-[#bce070]"
           >
             Work With Us
           </button>

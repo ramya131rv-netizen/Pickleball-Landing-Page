@@ -8,7 +8,7 @@ export const WhoWeServeSection = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="who-we-serve" className={`${sectionSpacing} bg-[#102319] font-sans`}>
+    <section id="who-we-serve" className={`${sectionSpacing} bg-background font-sans`}>
       <div className="max-w-[1000px] mx-auto">
         
         {/* Header */}
@@ -33,7 +33,7 @@ export const WhoWeServeSection = () => {
                 onClick={() => setActiveTab(i)}
                 className={`flex items-center gap-2.5 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                   isActive
-                    ? "bg-[#d0e999] text-[#102319] shadow-[0_4px_20px_rgba(208,233,153,0.25)] scale-105"
+                    ? "bg-lime text-[#102319] shadow-[0_4px_20px_rgba(208,233,153,0.25)] scale-105"
                     : "bg-transparent border border-white/15 text-white/80 hover:border-white/40 hover:bg-white/5"
                 }`}
               >
@@ -72,7 +72,7 @@ export const WhoWeServeSection = () => {
               <div className="flex flex-col md:flex-row rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl relative">
                 
                 {/* Left Side: Pains */}
-                <div className="w-full md:w-1/2 p-8 md:p-12 bg-[#1b2a22]">
+                <div className="w-full md:w-1/2 p-8 md:p-12 bg-background/90">
                   <h4 className="text-[#ff7a6b] text-xs font-bold uppercase tracking-[0.15em] mb-8">
                     Your Current Pain
                   </h4>
@@ -87,15 +87,15 @@ export const WhoWeServeSection = () => {
                 </div>
 
                 {/* Right Side: Delivers */}
-                <div className="w-full md:w-1/2 p-8 md:p-12 bg-[#d0e999]/10 z-10 before:absolute before:inset-0 before:shadow-[0_0_60px_rgba(208,233,153,0.2)] before:-z-10 before:pointer-events-none flex flex-col items-start justify-between">
+                <div className="w-full md:w-1/2 p-8 md:p-12 bg-background-deep/50 z-10 before:absolute before:inset-0 before:shadow-[0_0_60px_rgba(208,233,153,0.2)] before:-z-10 before:pointer-events-none flex flex-col items-start justify-between">
                   <div className="w-full">
-                    <h4 className="text-[] text-xs font-extrabold uppercase tracking-[0.15em] mb-8">
+                    <h4 className="text-lime text-xs font-extrabold uppercase tracking-[0.15em] mb-8">
                       EyeLevel Delivers
                     </h4>
                     <ul className="flex flex-col gap-5 mb-10">
                       {whoWeServe[activeTab].delivers.map((d, i) => (
                         <li key={i} className="flex items-center gap-4">
-                          <div className="w-3.5 h-3.5 rounded-full border-[2px] border-[#d0e999] shrink-0 mt-0.5"></div>
+                          <div className="w-2 h-2 rounded-full bg-lime shrink-0 mt-0.5 shadow-[0_0_8px_rgba(255,122,107,0.5)]"></div>
                           <span className="text-[#FFFFFF] text-sm md:text-[15px] font-medium tracking-wide">{d}</span>
                         </li>
                       ))}
@@ -104,7 +104,7 @@ export const WhoWeServeSection = () => {
                   
                   <button 
                     onClick={() => document.getElementById("final-cta")?.scrollIntoView({ behavior: "smooth" })}
-                    className="px-7 py-3.5 bg-[#FFFFFF]/10 text-[#d0e999] hover:bg-[#d0e999] hover:text-[#102319] text-[13px] font-bold rounded-full transition-colors flex items-center gap-2"
+                    className="px-7 py-3.5 bg-[#FFFFFF]/10 text-[#d0e999] hover:bg-lime hover:text-[#102319] text-sm font-bold rounded-full transition-colors flex items-center gap-2"
                   >
                     {whoWeServe[activeTab].cta} <ArrowRight className="w-4 h-4 ml-1" />
                   </button>

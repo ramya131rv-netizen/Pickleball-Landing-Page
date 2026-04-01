@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
 
 import eyelevelLogo from "@/assets/eyelevel_logo.svg";
-import { Button } from "@/components/ui/button";
 
 const navItems = [
   { label: "Services", id: "services" },
@@ -20,6 +19,7 @@ const scrollToSection = (id: string) => {
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showCta, setShowCta] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,99 +33,180 @@ export const Navbar = () => {
     return () => document.removeEventListener("mousedown", handlePointerDown);
   }, []);
 
+  useEffect(() => {
+    const heroSection = document.getElementById("hero");
+
+    if (!heroSection) {
+      setShowCta(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowCta(!entry.isIntersecting);
+      },
+      { threshold: 0 },
+    );
+
+    observer.observe(heroSection);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
+    }
+
+    return () => {
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
+    };
+  }, [isOpen]);
+
   const handleNavigate = (id: string) => {
     scrollToSection(id);
     setIsOpen(false);
   };
 
   return (
-    <nav className="absolute inset-x-0 top-0 z-50 px-4 pt-2 sm:px-5 md:px-8">
-      <div className="mx-auto max-w-7xl" ref={navRef}>
-        <div className="py-3 md:px-0">
-          <div className="flex items-center justify-between gap-4">
-            <Link
-              to="/"
-              className="shrink-0 transition-opacity hover:opacity-90"
-            >
-              <img
-                src={eyelevelLogo}
-                alt="EyeLevel Studio"
-                className="h-16 md:h-20 w-auto"
-              />
-            </Link>
-
-            <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/10 px-2 py-1.5 backdrop-blur-md md:flex">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => scrollToSection(item.id)}
-                  className="rounded-full px-4 py-2 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
-                >
-                  {item.label}
-                </button>
-              ))}
-              <Button
-                variant="lime"
-                size="sm"
-                className="ml-2 rounded-full font-semibold"
-                onClick={() => scrollToSection("final-cta")}
-              >
-                Let's Talk
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div>
-
-            <button
-              type="button"
-              className="inline-flex h-10 w-10 items-center justify-center text-white transition-opacity hover:opacity-80 md:hidden"
-              aria-label={
-                isOpen ? "Close navigation menu" : "Open navigation menu"
-              }
-              aria-expanded={isOpen}
-              onClick={() => setIsOpen((open) => !open)}
-            >
-              {isOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
-            </button>
-          </div>
-        </div>
-
-        <div
-          className={`overflow-hidden transition-all duration-250 ease-out md:hidden ${
-            isOpen
-              ? "max-h-80 translate-y-0 pt-0 opacity-100"
-              : "max-h-0 -translate-y-2 pt-0 opacity-0"
-          }`}
+    <motion.header
+      className="fixed inset-x-0 top-0 z-[1000] border-b border-white/10 bg-[#0d1f1a]/92 backdrop-blur-[12px]"
+      role="banner"
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+    >
+      <div
+        className="mx-auto flex min-h-[72px] w-full max-w-[1200px] items-center justify-between px-[18px] lg:px-1"
+        ref={navRef}
+      >
+        <motion.button
+          type="button"
+          className="flex shrink-0 items-center gap-2.5 text-[1.15rem] text-white"
+          aria-label="EyeLevel home"
+          whileHover={{ scale: 1.03 }}
+          onClick={() => handleNavigate("hero")}
         >
-          <div className="rounded-[1.5rem] border border-white/10 bg-[#10261c]/95 px-5 py-4 text-white shadow-[0_16px_50px_rgba(0,0,0,0.22)] backdrop-blur-xl">
-            <div className="flex flex-col gap-4">
-              {navItems.map((item) => (
+          <a href="https://theeyelevelstudio.com">
+            <img
+              src={eyelevelLogo}
+              alt="EyeLevel Studio Logo"
+              className="h-[48px] w-auto md:h-[54px] lg:h-[63px]"
+            />
+          </a>
+        </motion.button>
+
+        <nav
+          className={`hidden flex-1 transition-all duration-300 md:flex ${showCta ? "justify-center" : "justify-end"}`}
+          aria-label="Primary navigation"
+        >
+          <ul className="flex items-center gap-6 text-[0.92rem] text-white/78 transition-all duration-300">
+            {navItems.map((item) => (
+              <li key={item.id}>
                 <button
-                  key={item.id}
                   type="button"
                   onClick={() => handleNavigate(item.id)}
-                  className="text-left text-base font-medium text-white/80 transition-colors hover:text-white"
+                  className="transition hover:text-[#e2fea5]"
                 >
                   {item.label}
                 </button>
-              ))}
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-              <Button
-                variant="lime"
-                className="mt-1 h-11 rounded-full text-sm font-semibold"
-                onClick={() => handleNavigate("final-cta")}
+        <div className="flex shrink-0 items-center gap-3">
+          <AnimatePresence>
+            {showCta ? (
+              <motion.button
+                type="button"
+                className="hidden items-center justify-center whitespace-nowrap rounded-[8px] bg-[#e2fea5] px-[18px] py-[9px] text-[0.85rem] font-semibold text-[#0d1f1a] transition hover:bg-[#c8e88a] hover:shadow-[0_4px_16px_rgba(226,254,165,0.25)] md:inline-flex"
+                aria-label="Get a free consultation"
+                initial={{ opacity: 0, x: 10, scale: 0.95 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, x: 10, scale: 0.95 }}
+                transition={{ duration: 0.22, ease: "easeOut" }}
+                whileHover={{ y: -2, scale: 1.01 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => handleNavigate("hero-form")}
               >
                 Let's Talk
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div>
-          </div>
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </motion.button>
+            ) : null}
+          </AnimatePresence>
+
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-end text-white transition hover:text-[#e2fea5] md:hidden"
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
+            aria-label="Toggle navigation menu"
+            onClick={() => setIsOpen((open) => !open)}
+          >
+            {isOpen ? (
+              <X size={18} strokeWidth={2.2} />
+            ) : (
+              <Menu size={18} strokeWidth={2.2} />
+            )}
+          </button>
         </div>
       </div>
-    </nav>
+
+      <AnimatePresence>
+        {isOpen ? (
+          <motion.nav
+            id="mobile-nav"
+            className="border-t border-white/10 bg-[#10251f] px-[18px] py-4 md:hidden"
+            aria-label="Mobile navigation"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            <ul className="flex flex-col gap-1 text-[0.95rem] text-white/82">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    type="button"
+                    className="block w-full rounded-[8px] px-3 py-2.5 text-left transition hover:bg-white/5 hover:text-[#e2fea5]"
+                    onClick={() => handleNavigate(item.id)}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+
+              <AnimatePresence>
+                {showCta ? (
+                  <motion.li
+                    className="pt-3"
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
+                  >
+                    <button
+                      type="button"
+                      className="inline-flex w-full items-center justify-center rounded-[8px] bg-[#e2fea5] px-[18px] py-[11px] text-[0.9rem] font-semibold text-[#0d1f1a] transition hover:bg-[#c8e88a]"
+                      onClick={() => handleNavigate("hero-form")}
+                    >
+                      Let's Talk
+                    </button>
+                  </motion.li>
+                ) : null}
+              </AnimatePresence>
+            </ul>
+          </motion.nav>
+        ) : null}
+      </AnimatePresence>
+    </motion.header>
   );
 };
