@@ -219,16 +219,13 @@ export const CaseStudiesSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className=" flex items-center gap-2 pt-5">
+                <div className=" flex items-center gap-2 mt-5">
                   <span className="font-dela text-2xl text-lime/20">
                     0{i + 1}
                   </span>
                   <h4 className="font-bricolage text-base text-white leading-tight">
                     {format.title}
                   </h4>
-                  {/* <p className="text-white/60 text-xs font-light">
-                    {format.desc}
-                  </p> */}
                 </div>
               </motion.div>
             ))}

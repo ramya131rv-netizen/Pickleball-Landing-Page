@@ -1,10 +1,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /pickleball-agency/
+  RewriteBase /pickleball-marketing-agency/
 
   RewriteRule ^index\.html$ - [L]
 
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /pickleball-agency/index.html [L]
+  RewriteRule . /pickleball-marketing-agency/index.html [L]
 </IfModule>

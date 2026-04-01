@@ -15,10 +15,12 @@ import {
   CheckCircle2,
   Tag,
 } from "lucide-react";
+
+// trusted by logos
 import TNPAImg from "@/assets/TrustedBy/TNPA_LOGO.png";
 import WPPlImg from "@/assets/TrustedBy/wppl-Inverse.png";
-import BJ from "@/assets/Bangalore-Jawans-logo.svg";
-import CSC from "@/assets/CSC-logo.svg";
+import BJ from "@/assets/TrustedBy/Bangalore-Jawans-logo.svg";
+import CSC from "@/assets/TrustedBy/CSC-logo.svg";
 import TNPPL from "@/assets/TrustedBy/TNPPL LOGO-S1.png";
 
 // casestudies
@@ -27,8 +29,6 @@ import TNPA from "@/assets/case-studies/tnpa.webp";
 import bj from "@/assets/case-studies/bj.webp";
 import csc from "@/assets/case-studies/csc.webp";
 
-import professional from "../../assets/professional.png";
-import association from "../../assets/association.png";
 
 export const trustedBy = [
   { name: "Tamil Nadu Pickleball Association", img: TNPAImg },
@@ -206,28 +206,16 @@ export const caseStudies = [
 
 export const eventFormats = [
   {
-    img: professional,
-    icon: Trophy,
     title: "Professional Leagues",
-    desc: "Multi-day · Multi-team · Full production",
   },
   {
-    img: association,
-    icon: Zap,
     title: "WPBL Franchise Events",
-    desc: "World Pickleball League standard",
   },
   {
-    img: Wppl,
-    icon: Users,
     title: "Association Events",
-    desc: "Official TNPA activations",
   },
   {
-    img: Wppl,
-    icon: Target,
     title: "Open Tournaments",
-    desc: "End-to-end tournament management",
   },
 ];
 
